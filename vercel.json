@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/**/*.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    { "src": "/docs", "dest": "/api/docs.js" },
+    { "src": "/src/openapi.json", "dest": "/api/openapi.js" },
+    { "src": "/ai-chat/(.*)", "dest": "/api/ai-chat/$1.js" },
+    { "src": "/download/(.*)", "dest": "/api/download/$1.js" },
+    { "src": "/image/(.*)", "dest": "/api/image/$1.js" },
+    { "src": "/news/(.*)", "dest": "/api/news/$1.js" },
+    { "src": "/anime/(.*)", "dest": "/api/anime/$1.js" },
+    { "src": "/tools/(.*)", "dest": "/api/tools/$1.js" },
+    { "src": "/(.*)", "dest": "/api/index.js" }
+  ],
+  "env": {
+    "NODE_ENV": "production"
+  }
+}
