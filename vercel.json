@@ -1,0 +1,17 @@
+{
+  "functions": {
+    "src/api/**/*.js": {
+      "runtime": "@vercel/node@3"
+    }
+  },
+  "rewrites": [
+    { "source": "/docs", "destination": "/src/api/docs" },
+    { "source": "/src/openapi.json", "destination": "/src/api/openapi" },
+    { "source": "/ai-chat/:endpoint", "destination": "/src/api/ai-chat/:endpoint" },
+    { "source": "/download/:endpoint", "destination": "/src/api/download/:endpoint" },
+    { "source": "/image/:endpoint", "destination": "/src/api/image/:endpoint" },
+    { "source": "/news/:endpoint", "destination": "/src/api/news/:endpoint" },
+    { "source": "/anime/:endpoint", "destination": "/src/api/anime/:endpoint" },
+    { "source": "/(.*)", "destination": "/src/api/index" }
+  ]
+}
